@@ -270,11 +270,11 @@ cluster.boot <- function(model, cluster, parallel = FALSE, use_white = NULL,
   boot_args$estimator <- eval(model$call[[1]])
   boot_args$model <- model
   boot_args$wild_func <- wild_func
-  
+  print("Got this far")
   for(i in 1:tcc) {
     boot.outs[[i]] <- boot(unique(cluster[,i]), est.func, R = R,
                            parallel = par_type, cl = par_cluster,
-                           data2 = full_data, clustvar = as.vector(cluster[,i]),
+                           data2 = full_data, clustvar = cluster[,i],
                            reg_arglist = args, boot_args = boot_args)
   }
   
