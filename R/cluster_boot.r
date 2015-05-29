@@ -277,7 +277,7 @@ cluster.boot <- function(model, cluster, parallel = FALSE, use_white = NULL,
                            data2 = full_data, clustvar = cluster[,i],
                            reg_arglist = args, boot_args = boot_args)
   }
-  
+  print("But not this far")
   if(debug) {
     print(df)
     print(vcov_sign)
